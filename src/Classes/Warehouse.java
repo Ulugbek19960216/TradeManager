@@ -14,7 +14,7 @@ public class Warehouse {
     private Observable observable;
     private static Warehouse instance = null;
     private ArrayList<Product> productList = new ArrayList<>();
-    private ArrayList<Customer> customers = new ArrayList<>();
+    private ArrayList<Customer> customerList = new ArrayList<>();
     
     private Warehouse() {
         
@@ -31,7 +31,7 @@ public class Warehouse {
         return instance;
     }
     
-    
+    // Add Product
     public void addProduct(Product item) {
         productList.add(item);
         observable.onUpdate();
@@ -42,10 +42,27 @@ public class Warehouse {
         return productList.get(index);
     }
     
-
-    
-    public int getProductCount() {
+      public int getProductCount() {
         return productList.size();
     }
+    
+      // Create Customer
+      
+    public void createCustomer(Customer customer) {
+        customerList.add(customer);
+        observable.onUpdate();
+    }
+    
+    public Customer getCustomer(int index) {
+        return customerList.get(index);
+    }
+    
+    public int getCustomerCount() {
+        return customerList.size();
+    }
+    
+    
+    
+
             
 }

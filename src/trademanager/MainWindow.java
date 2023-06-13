@@ -173,6 +173,7 @@ public class MainWindow extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void salesAnalysisBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salesAnalysisBtnActionPerformed

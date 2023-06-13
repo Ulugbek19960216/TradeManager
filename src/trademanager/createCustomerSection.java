@@ -3,19 +3,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package trademanager;
+import Classes.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author admin
  */
-public class createCustomerSection extends javax.swing.JDialog {
-
+public class createCustomerSection extends javax.swing.JDialog implements Observable {
+        DefaultTableModel customerTable;
     /**
      * Creates new form createCustomer1
      */
     public createCustomerSection(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        customerTable = (DefaultTableModel) customerTableList.getModel();
+        Warehouse.getInstance().registerObservable(this);
+        customerTable.setRowCount(0);
+        Warehouse.getInstance().registerObservable(this);
+        
+       // modelTable = (DefaultTableModel) productListTable.getModel();
+       // Warehouse.getInstance().registerObservable(this);
+       // modelTable.setRowCount(0);
+       // Warehouse.getInstance().registerObservable(this); 
     }
 
     /**
@@ -28,37 +39,36 @@ public class createCustomerSection extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jScrollBar1 = new javax.swing.JScrollBar();
+        customerTableList = new javax.swing.JTable();
+        addButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 153));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        customerTableList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", null, null, null, null, null},
-                {"2", null, null, null, null, null},
-                {"3", null, null, null, null, null},
-                {"4", null, null, null, null, null},
-                {"5", null, null, null, null, null},
-                {"6", null, null, null, null, null},
-                {"7", null, null, null, null, null},
-                {"8", null, null, null, null, null},
-                {"9", null, null, null, null, null},
-                {"10", null, null, null, null, null}
+
             },
             new String [] {
-                "Id", "F_Name", "L_Name", "EMail", "Phone", "Status"
+                "Id", "F_Name", "L_Name", "EMail", "Phone", "Balance", "Status"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(customerTableList);
+        if (customerTableList.getColumnModel().getColumnCount() > 0) {
+            customerTableList.getColumnModel().getColumn(0).setMinWidth(30);
+            customerTableList.getColumnModel().getColumn(0).setPreferredWidth(30);
+            customerTableList.getColumnModel().getColumn(0).setMaxWidth(30);
+        }
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1.setText("+ADD");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addButton.setBackground(new java.awt.Color(51, 204, 255));
+        addButton.setForeground(new java.awt.Color(255, 255, 255));
+        addButton.setText("ADD");
+        addButton.setAlignmentX(0.5F);
+        addButton.setBorderPainted(false);
+        addButton.setOpaque(true);
+        addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addButtonActionPerformed(evt);
             }
         });
 
@@ -66,39 +76,42 @@ public class createCustomerSection extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jButton1)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
+                    .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        editCustomerSection.main(null);
+    }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        createCustomerSection addCustomer = new createCustomerSection(MainWindow.getInstance(), true);
+        addCustomer.setLocationRelativeTo(MainWindow.getInstance());
+        addCustomer.pack();
+        addCustomer.setVisible(true);
+        
+         //addProductSection addProduct = new addProductSection(MainWindow.getInstance(), true);
+        //addProduct.setLocationRelativeTo(MainWindow.getInstance() );
+        //addProduct.pack();
+        //addProduct.setVisible(true); 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -125,25 +138,22 @@ public class createCustomerSection extends javax.swing.JDialog {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                createCustomerSection dialog = new createCustomerSection(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+        
+    }
+    
+    @Override
+    public void onUpdate() {
+        customerTable.setRowCount(0);
+        
+        for (int i = 0; i < Warehouse.getInstance().getCustomerCount(); i++) {
+            Customer customer = Warehouse.getInstance().getCustomer(i);
+            customerTable.addRow(new Object[] { i,  customer.getFirstName(), customer.getLastName(), customer.getGmail(), customer.getPhone(), customer.getBalance(), customer.getStatus() });
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JButton addButton;
+    private javax.swing.JTable customerTableList;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
