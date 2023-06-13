@@ -66,12 +66,14 @@ public class SavePopup extends javax.swing.JDialog {
         cancelButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 153));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 closeDialog(evt);
             }
         });
 
+        okButton.setBackground(new java.awt.Color(153, 255, 153));
         okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +81,7 @@ public class SavePopup extends javax.swing.JDialog {
             }
         });
 
+        cancelButton.setBackground(new java.awt.Color(255, 153, 153));
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +89,8 @@ public class SavePopup extends javax.swing.JDialog {
             }
         });
 
-        jLabel1.setText("Would it be possible for you to send an email via PDF attachment or provide a print");
+        jLabel1.setText("Would it be possible for you to send an email via PDF attachment or provide a print?");
+        jLabel1.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -34,11 +34,14 @@ public class Delete_popup extends javax.swing.JDialog {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 153));
 
         jLabel1.setText("Do you really want to delete this item?");
 
+        jButton1.setBackground(new java.awt.Color(153, 255, 153));
         jButton1.setText("YES");
 
+        jButton2.setBackground(new java.awt.Color(255, 153, 153));
         jButton2.setText("NO");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,9 +56,9 @@ public class Delete_popup extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
+                        .addGap(116, 116, 116)
                         .addComponent(jButton1)
-                        .addGap(27, 27, 27)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(97, 97, 97)
@@ -70,7 +73,7 @@ public class Delete_popup extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addGap(97, 97, 97))
+                .addGap(44, 44, 44))
         );
 
         pack();

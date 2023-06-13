@@ -68,6 +68,7 @@ public class LoginPage extends javax.swing.JDialog {
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
 
+        setBackground(new java.awt.Color(255, 255, 153));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 closeDialog(evt);
@@ -76,6 +77,7 @@ public class LoginPage extends javax.swing.JDialog {
 
         jLabel2.setText("Password");
 
+        jButton2.setBackground(new java.awt.Color(204, 204, 255));
         jButton2.setText("Login");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
