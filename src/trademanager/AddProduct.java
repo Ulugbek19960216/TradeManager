@@ -33,7 +33,6 @@ public class AddProduct extends javax.swing.JDialog implements Observable{
     private void initComponents() {
 
         addButton = new javax.swing.JButton();
-        scroolBar = new javax.swing.JScrollBar();
         panel = new javax.swing.JScrollPane();
         productListTable = new javax.swing.JTable();
 
@@ -83,13 +82,9 @@ public class AddProduct extends javax.swing.JDialog implements Observable{
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 61, Short.MAX_VALUE)
-                        .addComponent(scroolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -97,10 +92,8 @@ public class AddProduct extends javax.swing.JDialog implements Observable{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(scroolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-            .addComponent(panel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
         );
 
         pack();
@@ -114,17 +107,17 @@ public class AddProduct extends javax.swing.JDialog implements Observable{
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-         AddProduct addProduct = new AddProduct(MainWindow.getInstance(), true);
+        AddProduct addProduct = new AddProduct(MainWindow.getInstance(), true);
         addProduct.setLocationRelativeTo(MainWindow.getInstance() );
         addProduct.pack();
         addProduct.setVisible(true); 
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JScrollPane panel;
     private javax.swing.JTable productListTable;
-    private javax.swing.JScrollBar scroolBar;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -133,8 +126,7 @@ public class AddProduct extends javax.swing.JDialog implements Observable{
         
         for (int i = 0; i < Warehouse.getInstance().getProductCount(); i++) {
             Product items = Warehouse.getInstance().getProduct(i);
-            
-            modelTable.addRow(new Object[] { items.getId(),  items.getName(), items.getPrice(), items.getKuantity(), items.getStatus() });
+            modelTable.addRow(new Object[] { i,  items.getName(), items.getPrice(), items.getKuantity(), items.getStatus() });
         }
     }
 }//Warehouse.getInstance().getProductCount());

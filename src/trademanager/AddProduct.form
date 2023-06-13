@@ -24,15 +24,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="panel" min="-2" pref="675" max="-2" attributes="0"/>
+              <Component id="panel" pref="608" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="61" max="32767" attributes="0"/>
-                      <Component id="scroolBar" min="-2" pref="25" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="addButton" max="32767" attributes="0"/>
-              </Group>
+              <Component id="addButton" min="-2" pref="86" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -42,11 +36,9 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="addButton" min="-2" pref="93" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-              <Component id="scroolBar" min="-2" pref="347" max="-2" attributes="0"/>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
-          <Component id="panel" alignment="0" max="32767" attributes="0"/>
+          <Component id="panel" alignment="0" pref="521" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -67,8 +59,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addButtonActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JScrollBar" name="scroolBar">
     </Component>
     <Container class="javax.swing.JScrollPane" name="panel">
       <AuxValues>

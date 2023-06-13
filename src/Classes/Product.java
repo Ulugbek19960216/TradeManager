@@ -12,7 +12,6 @@ import java.util.ArrayList;
  */
 public class Product {
     private ArrayList<Product> products;
-    private int id;
     private String name;
     private String color;
     private double purchasingPrice;
@@ -21,9 +20,9 @@ public class Product {
     private boolean status;
     
     
-    public int getId() {
-        return id;
-    }
+    
+    
+    
     
     public String getName() {
         return name;
