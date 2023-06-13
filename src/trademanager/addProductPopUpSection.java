@@ -11,12 +11,12 @@ import Classes.Warehouse;
  *
  * @author HP
  */
-public class AddProductPop extends javax.swing.JDialog {
+public class addProductPopUpSection extends javax.swing.JDialog {
 
     /**
      * Creates new form AddProductPop
      */
-    public AddProductPop(java.awt.Frame parent, boolean modal) {
+    public addProductPopUpSection(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -180,7 +180,7 @@ public class AddProductPop extends javax.swing.JDialog {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        AddProductPop addProductPop = new AddProductPop(MainWindow.getInstance(), true);
+        addProductPopUpSection addProductPop = new addProductPopUpSection(MainWindow.getInstance(), true);
         addProductPop.setLocationRelativeTo(MainWindow.getInstance() );
         addProductPop.pack();
        addProductPop.setVisible(true); 

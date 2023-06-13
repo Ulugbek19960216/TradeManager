@@ -9,12 +9,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author HP
  */
-public class AddProduct extends javax.swing.JDialog implements Observable{
+public class addProductSection extends javax.swing.JDialog implements Observable{
         DefaultTableModel modelTable;
     /**
      * Creates new form AddProduct
      */
-    public AddProduct(java.awt.Frame parent, boolean modal) {
+    public addProductSection(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         modelTable = (DefaultTableModel) productListTable.getModel();
@@ -100,14 +100,14 @@ public class AddProduct extends javax.swing.JDialog implements Observable{
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-       AddProductPop.main(null);
+       addProductPopUpSection.main(null);
     }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        AddProduct addProduct = new AddProduct(MainWindow.getInstance(), true);
+        addProductSection addProduct = new addProductSection(MainWindow.getInstance(), true);
         addProduct.setLocationRelativeTo(MainWindow.getInstance() );
         addProduct.pack();
         addProduct.setVisible(true); 

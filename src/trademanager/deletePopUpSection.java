@@ -8,12 +8,12 @@ package trademanager;
  *
  * @author admin
  */
-public class Delete_popup extends javax.swing.JDialog {
+public class deletePopUpSection extends javax.swing.JDialog {
 
     /**
      * Creates new form Delete_popup
      */
-    public Delete_popup(java.awt.Frame parent, boolean modal) {
+    public deletePopUpSection(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -100,20 +100,21 @@ public class Delete_popup extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Delete_popup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(deletePopUpSection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Delete_popup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(deletePopUpSection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Delete_popup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(deletePopUpSection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Delete_popup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(deletePopUpSection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Delete_popup dialog = new Delete_popup(new javax.swing.JFrame(), true);
+                deletePopUpSection dialog = new deletePopUpSection(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
